@@ -35,7 +35,7 @@ const CardsSection = () => (
 			backgroundPosition: 'center',
 			height: '100vh', // Full height of the viewport
 		}}
-		className="flex flex-col items-center justify-center py-10">
+		className="md:flex md:text-center flex-col items-center justify-center py-10">
 		<h1 className="text-4xl font-bold mb-10 text-white">
 			Our Mission, Vision, Value
 		</h1>

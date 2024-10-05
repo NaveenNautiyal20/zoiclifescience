@@ -10,6 +10,7 @@ import {
 	FaProductHunt,
 	FaSearch,
 	FaPhoneAlt,
+	FaLinkedinIn,
 } from 'react-icons/fa';
 import {IoMdMail} from 'react-icons/io';
 import {MdLocationOn} from 'react-icons/md';
@@ -21,6 +22,7 @@ import Banner from '@healthvisa/components/banner';
 import Blogs from '@healthvisa/components/blogs';
 import CardsSection from '@healthvisa/components/card';
 import VerticalTimeline from '@healthvisa/components/timeline';
+import {TwitterIcon, EmailShareButton} from 'react-share';
 
 const HealthVisa: NextPage = () => {
 	const [togglemenu, setTogglemenu] = useState(false);
@@ -157,6 +159,7 @@ const HealthVisa: NextPage = () => {
 								className="hover:bg-[#0ca1b8] hover:text-white rounded-xl py-2 px-5"
 								style={{
 									backgroundColor: index === 0 ? '#0ca1b8' : 'none',
+									color: index === 0 ? 'white' : 'none',
 								}}
 								key={link.id}>
 								{link.name}
@@ -176,7 +179,7 @@ const HealthVisa: NextPage = () => {
 				</div>
 			</div>
 			<div className="fixed top-0 w-full h-28 bg-white">
-				<div className="ml-10 w-32 h-24 py-3 pr-5  fixed">
+				<div className="ml-10 w-32 h-24 md:py-3 pr-5  fixed">
 					<img src="/zoic.png" alt="" />
 				</div>
 				{togglemenu && (
@@ -207,6 +210,7 @@ const HealthVisa: NextPage = () => {
 			<div className="py-8 px-5">
 				<div className="px-5 text-2xl text-[#333333]  font-bold mt-11   text-left">
 					<h6>ABOUT US</h6>
+
 					<h2 className="text-[#0ca1b8] mt-4">Welcome to Zoic Life Sciences</h2>
 				</div>
 				<div className="px-5 text-sm mt-4">
@@ -244,31 +248,37 @@ const HealthVisa: NextPage = () => {
 			{/* SECTION SERVICES */}
 			<div className="py-8 px-5">
 				<div className="flex flex-col items-center justify-center text-center p-6 bg-gray-100">
-					{/* Heading */}
-					<h2 className="text-[#0ca1b8] text-3xl font-medium mb-4">
+					<h2 className="text-[#0ca1b8] text-3xl sm:text-2xl font-medium mb-4">
 						Our Category Range
 					</h2>
 
-					<p className="text-lg max-w-4xl">
+					<p className="text-lg sm:text-base max-w-4xl">
 						Owning ISO GMP manufacturing infrastructure facilities benefits
 						associates with in-house services of drug formulations sourced
 						from trusted and credible vendors.
 					</p>
 				</div>
 
-				<div className="flex items-center justify-between h-full w-full  flex-wrap">
+				<div className="md:flex items-center justify-between h-full w-full flex-wrap gap-6">
 					{services.map((service) => (
-						<div key={service.id}>
-							<div className="flex text-[#0ca1b8] items-center justify-center relative top-52 left-[22%] h-7 w-7/12 text-base bg-white font-bold">
-								{service.name}
-							</div>
+						<div
+							key={service.id}
+							className="w-full md:w-[48%] lg:w-[31%] mb-6">
 							<div className="hover:opacity-70 w-full">
-								<img src={service.Image} alt="" />
+								<img
+									src={service.Image}
+									alt={service.name}
+									className="w-full h-auto"
+								/>
+							</div>
+							<div className="flex text-white items-center justify-center relative top-0 h-11 text-base bg-[#0ca1b8] font-bold mt-2">
+								{service.name}
 							</div>
 						</div>
 					))}
 				</div>
 			</div>
+
 			{/* SECTION TimelineCard */}
 			{/* <VerticalTimeline /> */}
 			{/* SECTION ABOU SECTION */}
@@ -286,7 +296,7 @@ const HealthVisa: NextPage = () => {
 							provide you genuine buyers and sellers is our pivot.
 						</p>
 					</div>
-					<div className="max-w-4xl my-12 flex w-full justify-between">
+					<div className="max-w-4xl my-12 md:flex  md:w-full justify-between">
 						{state.map((states) => (
 							<div key={states.id}>
 								<div className="text-3xl hover:scale-110 shadow-lg  bg-[#0ca1b8] h-20 w-20 text-white mb-3 rounded-full flex justify-center items-center">
@@ -327,7 +337,7 @@ const HealthVisa: NextPage = () => {
 			</div>
 			{/* SECTION content */}
 			<div className="md:flex justify-between ">
-				<div className="py-8 px-5 w-[70%]">
+				<div className="py-8 px-5 md:w-[70%]">
 					<div className="px-5 text-2xl text-[#333333]  font-bold mt-11   text-left">
 						<h2 className="text-[#0ca1b8] text-3xl leading-10 mt-4">
 							Start Your Own Ethical Pharma Franchise Business in India
@@ -366,7 +376,7 @@ const HealthVisa: NextPage = () => {
 						</p>
 					</div>
 				</div>
-				<div className="w-[40%]  mt-5 p-3 bg-white border-2 shadow-md rounded-md">
+				<div className="md:w-[40%]  mt-5 p-3 bg-white border-2 shadow-md rounded-md">
 					<h2 className="text-2xl font-bold bg-[#0ca1b8] text-white p-4 rounded-t-md">
 						Enquire Us
 					</h2>
@@ -446,37 +456,49 @@ const HealthVisa: NextPage = () => {
 								<li className="mb-2 border-b-[1px]">
 									<a
 										href="#"
-										className="hover:text-[#0ca1b8] hover:scale-110">
+										className="hover:text-[#0ca1b8] text-white">
 										Home
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										About
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Our Product
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Contract Manufacturing
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Track Order
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Contact
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Franchise Opportunity
 									</a>
 								</li>
@@ -490,27 +512,37 @@ const HealthVisa: NextPage = () => {
 							</h3>
 							<ul>
 								<li className="mb-2  border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Tablets
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Capsules
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Syrups
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Oil
 									</a>
 								</li>
 								<li className="mb-2 border-b-[1px]">
-									<a href="#" className="hover:text-[#0ca1b8]">
+									<a
+										href="#"
+										className="hover:text-[#0ca1b8] text-white">
 										Injection
 									</a>
 								</li>
@@ -569,7 +601,7 @@ const HealthVisa: NextPage = () => {
 								</li>
 
 								<li className="hover:bg-[#0ca1b8] rounded-full text-white h-10 w-12 flex  text-center items-center justify-center cursor-pointer">
-									<ImInstagram />
+									<FaLinkedinIn />
 								</li>
 
 								<li className="hover:bg-[#0ca1b8] rounded-full text-white h-10 w-12 flex  text-center items-center justify-center cursor-pointer">

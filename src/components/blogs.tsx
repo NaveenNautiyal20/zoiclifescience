@@ -9,19 +9,20 @@ const Logo = (_props: unknown) => (
 			backgroundPosition: 'center',
 			height: '100vh', // Full height of the viewport
 		}}>
-		<div className="py-8 px-5  bg-cover bg-center h-screen">
-			<h5 className="text-white text-3xl font-medium mb-4 text-center">
+		<div className="py-8 px-5 bg-cover bg-center h-screen flex flex-col items-center justify-center">
+			<h5 className="text-white text-3xl sm:text-2xl text-xl font-medium mb-4 text-center">
 				Our Products
 			</h5>
-			<h2 className="text-2xl text-white mb-5  text-center">
-				The product portfolio caters to wide range of PCD Pharma Products Being a
-				all range Pharma Franchise Company
+			<h2 className="text-2xl sm:text-xl text-lg text-white mb-5 text-center px-4">
+				The product portfolio caters to a wide range of PCD Pharma Products, being
+				a full-range Pharma Franchise Company.
 			</h2>
 
 			<div
 				style={{
 					transition: 'all 0.25s ease 0s',
-				}}>
+				}}
+				className="w-full">
 				<Carousel animation="slide" indicators={false} autoPlay={true}>
 					<Item item={[0, 1, 2, 3]} />
 					<Item item={[1, 2, 3, 4]} />
@@ -36,6 +37,7 @@ const Logo = (_props: unknown) => (
 		</div>
 	</section>
 );
+
 const Item = (props: {item: any[]}) => {
 	const logo = [
 		{
@@ -79,18 +81,20 @@ const Item = (props: {item: any[]}) => {
 			name: '4G-Cream',
 		},
 	];
+
 	return (
-		<div className="md:flex py-[30px] ">
+		<div className="flex py-[30px] justify-center">
 			{props.item.map((num) => (
-				<div className="">
-					<div className="flex  justify-center">
+				<div key={num} className="w-full md:w-1/4 px-2 mb-4 md:mb-0">
+					<div className="flex justify-center">
 						<img
-							className="rounded-2xl  object-cover p-2"
+							className="rounded-2xl object-cover w-full h-auto p-2"
 							src={logo[num].img}
+							alt={logo[num].name}
 						/>
 					</div>
-					<div className="w-[97%] ml-[5px] flex items-center  justify-center rounded-xl bg-[#0ca1b8]">
-						<div className="flex  p-2 text-white text-center justify-center font-bold">
+					<div className="w-full flex items-center justify-center rounded-xl bg-[#0ca1b8]">
+						<div className="flex p-2 text-white text-center justify-center font-bold">
 							{logo[num].name}
 						</div>
 					</div>
