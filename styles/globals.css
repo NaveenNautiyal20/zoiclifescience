@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	width: 100%;
+	font-family: 'Philosopher', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	overflow-x: hidden;
+}
+
+li {
+	list-style: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.navbar-main {
+		display: none;
+	}
+	.nav-list {
+		flex-direction: column;
+		height: auto;
+		margin-top: 100px;
+	}
+
+	.nav-item {
+		align-items: center;
+		width: 100%;
+		background-color: white;
+		color: #505050;
+		text-align: center;
+		padding: 15px 20px;
+	}
+	.btn {
+		display: block;
+	}
+	.name:hover {
+		background: #0ca1b8;
+	}
+}
