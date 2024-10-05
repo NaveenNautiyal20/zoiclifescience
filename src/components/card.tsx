@@ -6,7 +6,17 @@ import {
 	BriefcaseIcon,
 } from '@heroicons/react/24/solid';
 
-const Card = ({title, icon: Icon, description, color}) => (
+const Card = ({
+	title,
+	icon: Icon,
+	description,
+	color,
+}: {
+	title: string;
+	icon: any;
+	description: string;
+	color: string;
+}) => (
 	<div
 		className={`flex flex-col items-center bg-white rounded-xl shadow-md p-6 mx-4 my-4 transform transition duration-500 hover:scale-105 ${color}`}>
 		<div className="w-16 h-16 flex items-center justify-center bg-white rounded-full shadow-lg mb-4">

@@ -270,7 +270,7 @@ const HealthVisa: NextPage = () => {
 				</div>
 			</div>
 			{/* SECTION TimelineCard */}
-			<VerticalTimeline />
+			{/* <VerticalTimeline /> */}
 			{/* SECTION ABOU SECTION */}
 			<div className="py-8 px-5">
 				<div className=" flex flex-col items-center justify-center text-center p-6 bg-gray-100">
