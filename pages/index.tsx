@@ -1,6 +1,5 @@
 import {NextPage} from 'next';
 import React, {useState} from 'react';
-
 import {
 	FaFacebookF,
 	FaTwitter,
@@ -14,17 +13,14 @@ import {
 } from 'react-icons/fa';
 import {IoMdMail} from 'react-icons/io';
 import {MdLocationOn} from 'react-icons/md';
-
 import {ImInstagram} from 'react-icons/im';
-
 import {FiMenu} from 'react-icons/fi';
-import Banner from '@healthvisa/components/banner';
-import Blogs from '@healthvisa/components/blogs';
-import CardsSection from '@healthvisa/components/card';
-import VerticalTimeline from '@healthvisa/components/timeline';
-import {TwitterIcon, EmailShareButton} from 'react-share';
+import Banner from '../src/components/banner';
+import CardsSection from '../src/components/card';
+import Blogs from '../src/components/blogs';
+import VerticalTimeline from '../src/components/timeline';
 
-const HealthVisa: NextPage = () => {
+const ZoicLife = () => {
 	const [togglemenu, setTogglemenu] = useState(false);
 
 	const toggleNav = () => {
@@ -280,8 +276,11 @@ const HealthVisa: NextPage = () => {
 			</div>
 
 			{/* SECTION TimelineCard */}
+
 			{/* <VerticalTimeline /> */}
-			{/* SECTION ABOU SECTION */}
+
+			{/* SECTION  */}
+
 			<div className="py-8 px-5">
 				<div className=" flex flex-col items-center justify-center text-center p-6 bg-gray-100">
 					<div>
@@ -315,9 +314,9 @@ const HealthVisa: NextPage = () => {
 					</div>
 				</div>
 			</div>
-			{/* SECTION OUR PRODUCT */}
+			{/* SECTION BLOGS */}
 			<Blogs />
-			{/* SECTION content */}
+			{/* SECTION AWARD */}
 			<div className="py-8 px-5">
 				<div className="flex flex-col items-center justify-center text-center ">
 					<h2 className="text-[#0ca1b8] text-3xl leading-10 mb-4">
@@ -335,7 +334,7 @@ const HealthVisa: NextPage = () => {
 					))}
 				</div>
 			</div>
-			{/* SECTION content */}
+			{/* SECTION FORM */}
 			<div className="md:flex justify-between ">
 				<div className="py-8 px-5 md:w-[70%]">
 					<div className="px-5 text-2xl text-[#333333]  font-bold mt-11   text-left">
@@ -429,6 +428,7 @@ const HealthVisa: NextPage = () => {
 					</form>
 				</div>
 			</div>
+			{/* SECTION FOOTER*/}
 			<footer className="bg-gray-800  text-white py-10">
 				<div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex flex-wrap justify-between">
@@ -623,9 +623,8 @@ const HealthVisa: NextPage = () => {
 					</div>
 				</div>
 			</div>
-			{/* SECTION COPYRIGHT */}
 		</div>
 	);
 };
 
-export default HealthVisa;
+export default ZoicLife;

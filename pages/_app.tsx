@@ -5,8 +5,8 @@ import '../styles/globals.css';
 import type {AppProps} from 'next/app';
 import React from 'react';
 
-const Tls = ({Component, pageProps}: AppProps) => {
+const Zoic = ({Component, pageProps}: AppProps) => {
 	return <Component {...pageProps} />;
 };
 
-export default Tls;
+export default Zoic;
